@@ -1,0 +1,52 @@
+---
+
+---
+
+<header id="navbar" class="bg-white  fixed w-full top-0 z-50 transition-transform duration-300">
+  <nav class="max-w-7xl  mx-auto flex justify-between items-center p-4">
+    <a href="/" class="inline-block motion-preset-slide-right motion-duration-[1.2s] motion-delay-[0.2s]">
+  <img 
+    src="/public/SeferiumLogo1.svg" 
+    alt="Seferium Logo" 
+    class="w-40 h-auto"
+  />
+</a>
+
+    <ul class="flex gap-10">
+      <li><a href="#inicio" class="hover:text-blue-600">Inicio</a></li>
+      <li><a href="#servicios" class="hover:text-blue-600">Servicios</a></li>
+      <li><a href="#portafolio" class="hover:text-blue-600">Portafolio</a></li>
+      <li><a href="#nosotros" class="hover:text-blue-600">Nosotros</a></li>
+      <li>
+        <a href="#contacto" class="bg-[#1B1F3B] text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+          Contacto
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  // Detectar scroll y ocultar/mostrar navbar
+  let lastScroll = 0;
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 0) {
+      navbar.style.transform = "translateY(0)";
+      return;
+    }
+
+    if (currentScroll > lastScroll) {
+      // Desliza hacia abajo → oculta navbar
+      navbar.style.transform = "translateY(-100%)";
+    } else {
+      // Desliza hacia arriba → muestra navbar
+      navbar.style.transform = "translateY(0)";
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
